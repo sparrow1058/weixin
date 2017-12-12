@@ -1,0 +1,6 @@
+  <view class='function_container'>
+    <view class='function_item' wx:for="{{functions}}" wx:for-index="idx" wx:for-item="function">
+        <image id="{{idx}}" class='function_img' src='{{function.pic_url}}' bindtap="bindViewTap"/> 
+        <view class='function_name'>{{function.name}}</view>
+    </view>
+  </view>
