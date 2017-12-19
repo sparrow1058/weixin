@@ -1,4 +1,7 @@
-<view class="container">
-  <text>time:{{second}}</text>
-  <button>test</button>
+<view class="wrap">
+  <view class="circle-box">
+    <canvas class="circle" style="z-index:-99;width=200px,height:200px;" canvas-id='canvasCircle'></canvas>
+    <canvas class="circle" style="width:200px;height:200px;" canvas-id="canvasArcCir"> </canvas>
+    <view class="draw_btn" bindTap="drawCircle" >Start</view>
+  </view>
 </view>

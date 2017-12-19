@@ -1,5 +1,10 @@
+var Util = require('../../utils/util.js');
+var shopInfo=new Array;
 Page({
   data: {
+    shopRegCode:"",
+    shopName:"cc",
+    tableName:"dd",
     second: 20,
     functions: [
       {
@@ -33,12 +38,14 @@ Page({
   {
     var id=event.target.id;
     var itemList=this.data.functions;
-  
-
+   // this.getShopName();
+     console.log(shopInfo); 
+   /*  
     wx.request({
       url: 'https://ssl.haidiyun.top/web/call.php', 
         data: {
-        table: "test",
+        regcode:shopInfo['regCode'],
+        table: shopInfo['tableNo'],
         calltype: itemList[id].name
       },
       method :'POST',
@@ -49,6 +56,7 @@ Page({
         console.log(res.data)
       }
     })
+    */
   
   },
   addCallItem:function()
@@ -62,23 +70,41 @@ Page({
     });
 
   },
-
-  onLoad: function () {
-    /*
+  getShopName:function()
+  {
     wx.request({
-      url: 'https://ssl.haidiyun.top/web/calltype.php', //仅为示例，并非真实的接口地址
+      url: 'https://ssl.haidiyun.top/web/calltype.php',
       data: {
-        table: '',
-        calltype: ''
+        regcode: shopInfo['regCode'],
+        table: shopInfo['tableNo'],
       },
+      method: 'POST',
       header: {
-        "Content-Type": "application/json"
+        header: { 'content-type': 'application/x-www-form-urlencoded' }
       },
-      success: function (res) {
+      success: function (res) {  
         console.log(res.data)
       }
     })
-    */ 
+  },
+  onLoad: function () {
+    var that=this;
+    wx.getStorage({
+      key: 'detail',
+      success: function (res) {
+        var param;
+        for (var i=0;i<res.data.length;i++)
+        {
+            param=res.data[i].split('=');
+            shopInfo[param[0]]=param[1];
+        }
+        that.setData({
+          'shopName':shopInfo['regCode'],
+          'tableName':shopInfo['tableNo']         
+        })
+      }
+    })
+
   },
 
 

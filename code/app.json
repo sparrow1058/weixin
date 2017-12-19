@@ -9,30 +9,11 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#ffaf48",
     "navigationBarTitleText": "店小宝",
     "navigationBarTextStyle":"black"
   },
-  "tabBar":{
-    "selectedColor": "#1296db",
-    "list":[
-      {
-        "pagePath": "pages/index/index",
-        "text": "Home",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home.png"
-      },{
-      "pagePath":"pages/charge/charge",
-      "text":"man",
-      "iconPath":"images/charge.png",
-      "selectedIconPath":"images/charge.png"
-    },{
-      "pagePath":"pages/call/call",
-      "text":"call",
-      "iconPath": "images/call.png",
-      "selectedIconPath": "images/call.png"
-    }]
-  },
+
   "networkTimeout":{
     "request":10000,
     "downloadFile":10000

@@ -18,9 +18,15 @@
   padding-top: 10px
 }
 .function_img{
-  width:80px;
-  height:80px;
+  width:180rpx;
+  height:180rpx;
 }
 .function_name{
   padding-top:10px;
+}
+.shop_name{
+  width:100%
+}
+.table_name{
+  width:100%
 }

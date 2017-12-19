@@ -1,4 +1,6 @@
   <view class='function_container'>
+    <view calss="shop_name">店铺: {{shopName}}</view>
+    <view class="table_name">餐台: {{tableName}}</view>
     <view class='function_item' wx:for="{{functions}}" wx:for-index="idx" wx:for-item="function">
         <image id="{{idx}}" class='function_img' src='{{function.pic_url}}' bindtap="bindImageTap"/> 
         <view class='function_name'>{{function.name}}</view>
