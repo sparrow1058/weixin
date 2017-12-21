@@ -53,7 +53,10 @@ Page({
           })
 
         }else{
-          console.log('pay');
+          wx.navigateTo({
+            url: '../call/call',
+
+          })
 
         }
 
